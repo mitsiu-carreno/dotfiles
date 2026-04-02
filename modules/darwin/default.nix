@@ -1,10 +1,10 @@
 { pkgs, username, ...}: {
 
-
 	users.users.${username} = {
 		name = username;
 		home = "/Users/${username}";
 	};
+
   # Necessary for using flakes on this system.
 	nix = {
 		settings = {
@@ -22,7 +22,6 @@
 	# $ nix-env -qaP | grep wget
 	environment.systemPackages = [ 
 		pkgs.kitty
-		pkgs.neovim
 		pkgs.git
 	];
 
