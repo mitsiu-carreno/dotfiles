@@ -1,10 +1,21 @@
 { pkgs, username, ...}: {
-	
-	#services.nix-daemon.enable = true;
 
+
+	users.users.${username} = {
+		name = username;
+		home = "/Users/${username}";
+	};
   # Necessary for using flakes on this system.
-  nix.settings = {
-		experimental-features = "nix-command flakes";
+	nix = {
+		settings = {
+			experimental-features = "nix-command flakes";
+		};
+
+		gc = {
+			automatic = true;
+			interval = { Weekday = 0; Hour = 0; Minute = 0; };
+			options = "--delete-older-than 30d";
+		};
 	};
 
 	# List packages installed in system profile. To search by name, run:
@@ -47,8 +58,4 @@
 
 	# Enable alternative shell support in nix-darwin.
 	# programs.fish.enable = true;
-
-
-	# The platform the configuration will be used on.
-	#nixpkgs.hostPlatform = "aarch64-darwin";
 }
