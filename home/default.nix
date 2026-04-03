@@ -8,6 +8,7 @@
 		./programs/neovim
     ./programs/git
     ./programs/podman
+    ./programs/kitty
     #./programs/infisical
 	];
 }

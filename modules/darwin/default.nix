@@ -21,7 +21,6 @@
 	# List packages installed in system profile. To search by name, run:
 	# $ nix-env -qaP | grep wget
 	environment.systemPackages = [ 
-		pkgs.kitty
 	];
 
 	# Reference: 
@@ -46,6 +45,16 @@
 				AppleInterfaceStyle = "Dark";
 				KeyRepeat = 2;
 			};
+
+      # Required to allow window snapping via fn+ctrl
+      spaces.spans-displays = false;
+
+      trackpad = {
+        Clicking = true;
+        DragLock = true;
+        Dragging = true;
+        TrackpadPinch = true;
+      };
 		};
 
 		# Used for backwards compatibility, please read the changelog before changing.
