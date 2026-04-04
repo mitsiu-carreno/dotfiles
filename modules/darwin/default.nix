@@ -51,8 +51,8 @@
 
       trackpad = {
         Clicking = true;
-        DragLock = true;
         Dragging = true;
+        DragLock = false;
         TrackpadPinch = true;
       };
 		};
@@ -62,6 +62,17 @@
 		stateVersion = 6;
 
 	};
+
+  programs.zsh.promptInit = ''
+    autoload -Uz vcs_info
+    precmd() { vcs_info }
+
+    zstyle ':vcs_info:git:*' formats ' %%F{green}(%b)%%f'
+    zstyle 'vcs_info:*' enable git
+
+    setopt PROMPT_SUBST
+    PROMPT='%n@%1~''${vcs_info_msg_0_}$ '
+  '';
 
 	# Enable alternative shell support in nix-darwin.
 	# programs.fish.enable = true;
