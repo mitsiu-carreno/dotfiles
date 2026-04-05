@@ -54,6 +54,7 @@
         Dragging = true;
         DragLock = false;
         TrackpadPinch = true;
+        TrackpadThreeFingerHorizSwipeGesture = 2;
       };
 		};
 
