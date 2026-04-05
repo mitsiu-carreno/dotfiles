@@ -1,7 +1,0 @@
-{
-  git = {
-    personalEmail = "";
-    designaEmail = "";
-    upaEmail = "";
-  };
-}
