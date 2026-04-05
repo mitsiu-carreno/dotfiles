@@ -9,6 +9,8 @@
     ./programs/git
     ./programs/podman
     ./programs/kitty
+    ./programs/tree
+    ./programs/wallpaper
     #./programs/infisical
 	];
 }
