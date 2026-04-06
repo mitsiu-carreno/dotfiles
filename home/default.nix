@@ -11,6 +11,7 @@
     ./programs/kitty
     ./programs/tree
     ./programs/wallpaper
+    ./programs/mongo
     #./programs/infisical
 	];
 }
