@@ -10,7 +10,7 @@
     ./programs/podman
     ./programs/kitty
     ./programs/tree
-    #./programs/wallpaper
+    ./programs/wallpaper
     ./programs/mongo
     ./programs/ssh
     #./programs/infisical
