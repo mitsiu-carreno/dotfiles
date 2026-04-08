@@ -15,7 +15,8 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 -- <Tab> insert spaces
 vim.opt.expandtab = true
-vim.opt.smartindent = true
+-- Automatically inserts an extra level of indentation in some cases
+-- vim.opt.smartindent = true
 
 -- Search
 -- Case-insensitive by default
