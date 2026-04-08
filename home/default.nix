@@ -13,6 +13,7 @@
     ./programs/desktoppr
     ./programs/mongo
     ./programs/ssh
+    ./programs/keepassxc
     #./programs/infisical
 	];
 }
