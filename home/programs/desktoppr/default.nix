@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   wallp = ./observer.png;
-in
-{
+in {
   programs.desktoppr = {
     enable = true;
     settings.picture = wallp;
@@ -11,7 +9,7 @@ in
   launchd.agents.set-wallpaper = {
     enable = true;
     config = {
-      ProgramArguments = [ 
+      ProgramArguments = [
         "${pkgs.desktoppr}/bin/desktoppr"
         "${wallp}"
       ];

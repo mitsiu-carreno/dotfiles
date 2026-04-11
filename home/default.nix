@@ -1,16 +1,15 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
+  home.stateVersion = "25.11";
 
-	home.stateVersion = "25.11";
-
-	programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
   home.sessionPath = [
     "/opt/homebrew/bin"
     "/opt/homebrew/sbin"
   ];
 
-	imports = [
-		./programs/neovim
+  imports = [
+    ./programs/neovim
     ./programs/git
     ./programs/podman
     ./programs/kitty
@@ -19,5 +18,5 @@
     ./programs/mongo
     ./programs/ssh
     ./programs/keepassxc
-	];
+  ];
 }

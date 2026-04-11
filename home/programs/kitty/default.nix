@@ -1,11 +1,11 @@
-{ ... }: {
+{...}: {
   programs.kitty = {
     enable = true;
 
-#    font = {
-#      name = "JetBrainsMono Nerd Font"
-#      size = 11;
-#    };
+    #    font = {
+    #      name = "JetBrainsMono Nerd Font"
+    #      size = 11;
+    #    };
 
     # themeFile = "tokyo_night_night";
 
@@ -25,12 +25,11 @@
       # Tab
       tab_bar_style = "fade";
       tab_fade = "0 0 1 1";
-      active_tab_foreground =  "black";
+      active_tab_foreground = "black";
       active_tab_background = "#0ad688";
       inactive_tab_foreground = "black";
-
     };
-    
+
     keybindings = {
       # Spawing
       "cmd+t" = "launch --type=tab --cwd=current";
@@ -65,4 +64,3 @@
     background_opacity 1
   '';
 }
-

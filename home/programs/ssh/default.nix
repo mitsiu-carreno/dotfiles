@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.ssh = {
     enable = true;
 
@@ -15,7 +15,6 @@
 
     matchBlocks = {
       "*" = {
-
       };
 
       "github-default" = {

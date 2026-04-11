@@ -26,8 +26,15 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask }:
-  let
+  outputs = inputs @ {
+    self,
+    nix-darwin,
+    nixpkgs,
+    home-manager,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
+  }: let
     system = "aarch64-darwin";
     hostname = "mac";
     username = "kincaid";
@@ -36,27 +43,28 @@
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
       inherit system;
-      specialArgs = { inherit username; };
+      specialArgs = {inherit username;};
 
-      modules = [ 
-	      ./modules/darwin
-
+      modules = [
+        ./modules/darwin
 
         {
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
         }
 
-        home-manager.darwinModules.home-manager {
+        home-manager.darwinModules.home-manager
+        {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.${username} = import ./home;
         }
 
-        nix-homebrew.darwinModules.nix-homebrew {
+        nix-homebrew.darwinModules.nix-homebrew
+        {
           nix-homebrew = {
             # Install Homebrew under the default prefix
-            enable = true; 
+            enable = true;
 
             # User owning the Homebrew prefix
             user = username;
@@ -76,14 +84,13 @@
             enable = true;
             onActivation = {
               autoUpdate = true;
-              cleanup = "zap";  # Removes unlisted packages on activation
+              cleanup = "zap"; # Removes unlisted packages on activation
             };
 
             brews = [
               "infisical"
             ];
           };
-
         }
         # Optional: Align homebrew taps config with nix-homebrew
         ({config, ...}: {

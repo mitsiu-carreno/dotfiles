@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  home.packages = [ pkgs.podman ];
+{pkgs, ...}: {
+  home.packages = [pkgs.podman];
 
   xdg.configFile."containers/registries.conf".text = ''
     [registries.search]
