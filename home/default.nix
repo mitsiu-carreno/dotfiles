@@ -4,6 +4,11 @@
 
 	programs.zsh.enable = true;
 
+  home.sessionPath = [
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
+  ];
+
 	imports = [
 		./programs/neovim
     ./programs/git
@@ -14,6 +19,5 @@
     ./programs/mongo
     ./programs/ssh
     ./programs/keepassxc
-    #./programs/infisical
 	];
 }
