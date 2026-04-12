@@ -24,6 +24,11 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -34,6 +39,7 @@
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
+    sops-nix,
   }: let
     system = "aarch64-darwin";
     hostname = "mac";
@@ -57,6 +63,8 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          #home-manager.extraSpecialArgs = { inherit username };
+          home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
           home-manager.users.${username} = import ./home;
         }
 

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   home.stateVersion = "25.11";
 
   programs.zsh.enable = true;
@@ -7,6 +7,10 @@
     "/opt/homebrew/bin"
     "/opt/homebrew/sbin"
   ];
+
+  home.sessionVariables = {
+    SOPS_AGE_KEY_FILE = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
+  };
 
   imports = [
     ./programs/neovim
@@ -18,5 +22,6 @@
     ./programs/mongo
     ./programs/ssh
     ./programs/keepassxc
+    ./programs/sops
   ];
 }

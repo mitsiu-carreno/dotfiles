@@ -1,10 +1,8 @@
-{...}: {
+{config, ...}: {
   programs.git = {
     enable = true;
 
     settings = {
-      user.name = "mitsiu-carreno";
-      #user.email = secrets.git.personalEmail;
 
       init.defaultBranch = "main";
       pull.rebase = true;
@@ -13,20 +11,15 @@
 
     includes = [
       {
+        path = "${config.home.homeDirectory}/.config/git/personal-config";
+      }
+      {
         condition = "gitdir:*/upa/";
-        contents = {
-          user = {
-            name = "MACS-KINCAID";
-          };
-        };
+        path = "${config.home.homeDirectory}/.config/git/upa-config";
       }
       {
         condition = "gitdir:*/designa/";
-        contents = {
-          user = {
-            name = "designa-mitsiu";
-          };
-        };
+        path = "${config.home.homeDirectory}/.config/git/designa-config";
       }
     ];
   };
