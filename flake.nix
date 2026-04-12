@@ -64,7 +64,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           #home-manager.extraSpecialArgs = { inherit username };
-          home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
+          home-manager.sharedModules = [sops-nix.homeManagerModules.sops];
           home-manager.users.${username} = import ./home;
         }
 

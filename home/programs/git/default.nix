@@ -3,7 +3,6 @@
     enable = true;
 
     settings = {
-
       init.defaultBranch = "main";
       pull.rebase = true;
       core.editor = "vim";

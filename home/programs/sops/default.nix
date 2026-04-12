@@ -4,7 +4,7 @@
     defaultSopsFile = ../../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
 
-    # Key used to decript 
+    # Key used to decript
     age = {
       keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
     };
