@@ -42,11 +42,15 @@
       dock = {
         autohide = true;
         persistent-apps = [];
+        show-recents = false;
+        tilesize = 20;
       };
       finder = {
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
         ShowPathbar = true;
         FXPreferredViewStyle = "clmv";
+        _FXShowPosixPathInTitle = true;
       };
       NSGlobalDomain = {
         AppleInterfaceStyle = "Dark";
@@ -62,6 +66,17 @@
         DragLock = false;
         TrackpadPinch = true;
         TrackpadThreeFingerHorizSwipeGesture = 2;
+      };
+
+      hitoolbox.AppleFnUsageType = null;
+
+      loginwindow.GuestEnabled = false;
+
+      menuExtraClock.ShowSeconds = true;
+
+      controlcenter = {
+        BatteryShowPercentage = true;
+        Bluetooth = false;
       };
     };
 

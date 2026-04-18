@@ -1,11 +1,26 @@
 # Quick setup
-1. Install nix and nix-darwin
-2. Download the code
+1. Install nix 
+2. Prepare folder
 ```bash
-nix-shell -p git —run ‘git clone https://github.com/mitsiu-carreno/dotfiles.git /etc/nix-darwin’
+sudo mkdir -p /etc/nix-darwin
+sudo chown $(id -nu):$(id -ng) /etc/nix-darwin
+cd /etc/nix-darwin
+```
+3. Install software
+```bash
+xcode-select --install
+```
+4. Backup nix rc's
+```bash
+mv /etc/bashrc /etc/bashrc.bk 
+mv /etc/zshrc /etc/zshrc.bk
+``` 
+5. Download code
+```bash
+git clone https://github.com/mitsiu-carreno/dotfiles.git /etc/nix-darwin
 ```
 
-3. Build the flake
+6. Build the flake
 ```bash
 sudo nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes"  -- switch  --flake /etc/nix-darwin#mac
 ```
