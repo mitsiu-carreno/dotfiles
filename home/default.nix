@@ -23,5 +23,6 @@
     ./programs/ssh
     ./programs/keepassxc
     ./programs/sops
+    ./programs/tealdeer
   ];
 }
