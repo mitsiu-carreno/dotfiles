@@ -7,6 +7,7 @@
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
     ./homebrew.nix
+    ../shared/nixpkgs.nix
   ];
 
   users.users.${username} = {
