@@ -4,8 +4,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "kungfusheep";
       repo = "mfd.nvim";
-      rev = "master";
-      sha256 = "sha256-MXarF5J+r654B6W+AzIzNgvWzCaYfTPWQnVfPmMfcA8=";
+      rev = "5d6067159e1b1116a12f34827a353572dbf3bdb9";
+      sha256 = "sha256-CclZwmRKLabfpef/wS01AbhZ4AiS/WTP84hbtYUgqKc=";
     };
   };
 in {

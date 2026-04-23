@@ -8,7 +8,8 @@ local light_themes = {
 local dark_themes = {
   'mfd-dark', 'mfd-stealth', 'mfd-amber', 'mfd-mono',
   'mfd-scarlet', 'mfd-hud', 'mfd-nvg', 'mfd-blackout',
-  'mfd-flir', 'mfd-flir-rh', 'mfd-flir-fusion', 'mfd-gbl-dark', 'mfd-lumon'
+  'mfd-flir', 'mfd-flir-rh', 'mfd-flir-fusion', 
+  'mfd-gbl-dark', 'mfd-lumon', 'mfd-nerv'
 }
 
 local themes = {}

@@ -1,20 +1,24 @@
 # Quick setup
 1. Install nix 
+
 2. Prepare folder
 ```bash
 sudo mkdir -p /etc/nix-darwin
 sudo chown $(id -nu):$(id -ng) /etc/nix-darwin
 cd /etc/nix-darwin
 ```
+
 3. Install software
 ```bash
 xcode-select --install
 ```
+
 4. Backup nix rc's
 ```bash
-mv /etc/bashrc /etc/bashrc.bk 
-mv /etc/zshrc /etc/zshrc.bk
-``` 
+mv /etc/bashrc /etc/bashrc.backup-before-nix-darwin
+mv /etc/zshrc /etc/zshrc.backup-before-nix-darwin
+```
+
 5. Download code
 ```bash
 git clone https://github.com/mitsiu-carreno/dotfiles.git /etc/nix-darwin
@@ -25,9 +29,9 @@ git clone https://github.com/mitsiu-carreno/dotfiles.git /etc/nix-darwin
 sudo nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes"  -- switch  --flake /etc/nix-darwin#mac
 ```
 
-4. Populate .config/sops/age/keys.txt
+7. Populate .config/sops/age/keys.txt
 
-5. Rebuild the flake with secrets 
+8. Rebuild the flake with secrets
 ```bash
 sudo darwin-rebuild switch --flake /etc/nix-darwin#mac
 ```
