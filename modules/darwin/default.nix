@@ -1,8 +1,14 @@
 {
   pkgs,
   username,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.nix-homebrew.darwinModules.nix-homebrew
+    ./homebrew.nix
+  ];
+
   users.users.${username} = {
     name = username;
     home = "/Users/${username}";
