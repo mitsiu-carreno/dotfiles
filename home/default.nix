@@ -3,11 +3,6 @@
 
   programs.zsh.enable = true;
 
-  home.sessionPath = [
-    "/opt/homebrew/bin"
-    "/opt/homebrew/sbin"
-  ];
-
   home.sessionVariables = {
     SOPS_AGE_KEY_FILE = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
   };
@@ -18,7 +13,6 @@
     ./programs/podman
     ./programs/kitty
     ./programs/tree
-    ./programs/desktoppr
     ./programs/mongo
     ./programs/ssh
     ./programs/keepassxc

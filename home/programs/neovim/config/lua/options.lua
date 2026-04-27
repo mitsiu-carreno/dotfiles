@@ -17,6 +17,15 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 -- Automatically inserts an extra level of indentation in some cases
 -- vim.opt.smartindent = true
+-- Remove trailing whitespace on save (except in markdown)
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype ~= "markdown" then
+      vim.cmd([[silent! %s/\s\+$//e]])
+    end
+  end,
+})
 
 -- Search
 -- Case-insensitive by default

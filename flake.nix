@@ -1,5 +1,5 @@
 {
-  description = "nix-darwin system flake";
+  description = "macOs and Linux system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -41,14 +41,12 @@
     homebrew-cask,
     sops-nix,
   }: let
-    system = "aarch64-darwin";
-    hostname = "mac";
     username = "kincaid";
   in {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
-    darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
-      inherit system;
+    darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
       specialArgs = {
         inherit username inputs;
         inherit (inputs) homebrew-core homebrew-cask;
@@ -63,24 +61,43 @@
         }
 
         ({lib, ...}: {
-          nixpkgs.config = {
-            allowUnfreePredicate = pkg: let
-              name = lib.getName pkg;
-            in
-              builtins.elem name [
-                "postman"
-              ];
-          };
+          nixpkgs.config.allowUnfreePredicate = pkg: let
+            name = lib.getName pkg;
+          in
+            builtins.elem name [
+              "postman"
+            ];
         })
 
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          #home-manager.extraSpecialArgs = { inherit username };
+          home-manager.extraSpecialArgs = {inherit username;};
           home-manager.sharedModules = [sops-nix.homeManagerModules.sops];
-          home-manager.users.${username} = import ./home;
+          home-manager.users.${username} = {
+            imports = [
+              ./home
+              ./home/darwin.nix
+            ];
+          };
         }
+      ];
+    };
+
+    # Build linux flake using:
+    # $ home-manager switch --flake .#linux
+    homeConfigurations."linux" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfreePredicate = pkg:
+          builtins.elem (nixpkgs.lib.getName pkg) ["postman"];
+      };
+      extraSpecialArgs = {inherit inputs username;};
+      modules = [
+        sops-nix.homeManagerModules.sops
+        ./home
+        ./home/linux.nix
       ];
     };
   };
