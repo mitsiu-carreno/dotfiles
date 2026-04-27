@@ -1,6 +1,7 @@
 {pkgs, ...}: let
   mfd-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "mfd.nvim";
+    pname = "mfd.nvim";
+    version = "2026-04-07";
     src = pkgs.fetchFromGitHub {
       owner = "kungfusheep";
       repo = "mfd.nvim";
