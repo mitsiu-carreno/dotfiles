@@ -24,5 +24,6 @@
     ./programs/keepassxc
     ./programs/sops
     ./programs/tealdeer
+    ./programs/bruno
   ];
 }
