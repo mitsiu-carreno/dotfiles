@@ -62,6 +62,17 @@
           system.configurationRevision = self.rev or self.dirtyRev or null;
         }
 
+        ({lib, ...}: {
+          nixpkgs.config = {
+            allowUnfreePredicate = pkg: let
+              name = lib.getName pkg;
+            in
+              builtins.elem name [
+                "postman"
+              ];
+          };
+        })
+
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

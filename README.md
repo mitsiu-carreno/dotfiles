@@ -49,6 +49,22 @@ nix search nixpkgs kitty
 Or browse
 [search.nixos.org](https://search.nixos.org)
 
+# Generations
+## List generations
+```bash
+sudo darwin-rebuild --list-generations
+```
+
+## Switch generation
+```bash
+sudo darwin-rebuild switch --switch-generation N
+```
+
+## Rollback to previous generation
+```bash
+darwin-rebuild --rollback
+``` 
+
 # Documentation
 ```bash
 darwin-help
