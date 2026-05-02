@@ -105,7 +105,7 @@
     # sudo nixos-rebuild switch --flake .#nixos
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit username inputs; };
+      specialArgs = {inherit username inputs;};
       modules = [
         ./modules/nixos/configuration.nix
         ({lib, ...}: {
@@ -116,7 +116,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit username; };
+          home-manager.extraSpecialArgs = {inherit username;};
           home-manager.sharedModules = [sops-nix.homeManagerModules.sops];
           home-manager.users.${username} = {
             imports = [

@@ -1,4 +1,8 @@
-{...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.kitty = {
     enable = true;
 
@@ -30,29 +34,35 @@
       inactive_tab_foreground = "black";
     };
 
-    keybindings = {
-      # Spawing
-      "cmd+t" = "launch --type=tab --cwd=current";
+    keybindings =
+      {
+        # Pane rearrange
+        "ctrl+0" = "move_window_forward";
 
-      # Pane rearrange
-      "ctrl+0" = "move_window_forward";
+        # Splitting
+        "ctrl+shift+|" = "launch --location=vsplit --cwd=current";
+        "ctrl+shift+-" = "launch --location=hsplit --cwd=current";
 
-      # Splitting
-      "ctrl+shift+|" = "launch --location=vsplit --cwd=current";
-      "ctrl+shift+-" = "launch --location=hsplit --cwd=current";
+        # Focus
+        "ctrl+h" = "neighboring_window left";
+        "ctrl+l" = "neighboring_window right";
+        "ctrl+j" = "neighboring_window down";
+        "ctrl+k" = "neighboring_window up";
 
-      # Focus
-      "ctrl+h" = "neighboring_window left";
-      "ctrl+l" = "neighboring_window right";
-      "ctrl+j" = "neighboring_window down";
-      "ctrl+k" = "neighboring_window up";
-
-      # Resize
-      "ctrl+shift+h" = "resize_window wider 2";
-      "ctrl+shift+l" = "resize_window narrower 2";
-      "ctrl+shift+k" = "resize_window taller 2";
-      "ctrl+shift+j" = "resize_window shorter 2";
-    };
+        # Resize
+        "ctrl+shift+h" = "resize_window wider 2";
+        "ctrl+shift+l" = "resize_window narrower 2";
+        "ctrl+shift+k" = "resize_window taller 2";
+        "ctrl+shift+j" = "resize_window shorter 2";
+      }
+      // lib.optionalAttrs pkgs.stdenv.isDarwin {
+        # Spawing
+        "cmd+t" = "launch --type=tab --cwd=current";
+      }
+      // lib.optionalAttrs pkgs.stdenv.isLinux {
+        # Spawing
+        "ctrl+t" = "launch --type=tab --cwd=current";
+      };
   };
 
   # Second kitty config
