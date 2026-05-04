@@ -69,7 +69,7 @@
   xdg.configFile."kitty/upa.conf".text = ''
     include kitty.conf
 
-    font_size 23.0
+    font_size 38.0
 
     background_opacity 1
   '';

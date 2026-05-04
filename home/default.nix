@@ -19,5 +19,6 @@
     ./programs/sops
     ./programs/tealdeer
     ./programs/bruno
+    ./programs/presenterm
   ];
 }

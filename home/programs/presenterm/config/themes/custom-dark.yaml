@@ -1,0 +1,110 @@
+default:
+  margin:
+    percent: 8
+  colors:
+    # Main text color
+    foreground: "f2f9fc"
+    background: null
+
+slide_title:
+  alignment: left
+  padding_bottom: 0
+  padding_top: 0
+  colors:
+    # Theorically unused
+    foreground: "009700"
+  bold: true
+
+code:
+  alignment: center
+  minimum_size: 50
+  minimum_margin:
+    percent: 8
+  #theme_name: Amy
+  #theme_name: barf
+  #theme_name: CoolGlow
+  #theme_name: Darkmatter
+  #theme_name: halcyon
+  theme_name: dracula
+  padding:
+    horizontal: 2
+    vertical: 1
+
+execution_output:
+  colors:
+    # Ambar retro
+    foreground: "FFC300"
+
+inline_code:
+  colors:
+    # `This accents`
+    foreground: "FF5666"
+
+intro_slide:
+  title:
+    alignment: center
+    colors:
+      foreground: "e81223"
+  subtitle:
+    alignment: center
+    colors:
+      foreground: "ffb902"
+  author:
+    alignment: center
+    colors:
+      foreground: "e0e0e0"
+    positioning: page_bottom
+
+headings:
+  h1:
+    prefix: "██"
+    colors:
+      foreground: "f7640d"
+  h2:
+    prefix: "▓▓▓"
+    colors:
+      foreground: "ffb902"
+  h3:
+    prefix: "▒▒▒▒"
+    colors:
+      foreground: "00FF00"
+  h4:
+    prefix: "░░░░░"
+    colors:
+      foreground: "00CCFF"
+  h5:
+    prefix: "░░░░░░"
+    colors:
+      foreground: "e81223"
+  h6:
+    prefix: "░░░░░░░"
+    colors:
+      foreground: "e0e0e0"
+
+block_quote:
+  prefix: "▍ "
+  colors:
+    foreground: white
+    background: black
+    prefix: "00CCFF"
+
+typst:
+  colors:
+    foreground: "f0f0f0"
+    background: null
+
+footer:
+  style: progress_bar
+  colors:
+    foreground: "5c5c5c"
+  character: ░
+
+#footer:
+#  style: template
+#  left: "My name is {title}"
+#  center: "ok"
+#  right: "{current_slide} / {total_slides}"
+
+modals:
+  selection_colors:
+    foreground: yellow

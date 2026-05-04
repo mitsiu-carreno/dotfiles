@@ -1,0 +1,9 @@
+defaults:
+  theme: custom-dark
+
+typst:
+  # the pixels per inch when rendering latex/typst formulas.
+  ppi: 400
+
+options:
+  implicit_slide_ends: true
