@@ -20,9 +20,10 @@ code:
   minimum_size: 50
   minimum_margin:
     percent: 8
-  #theme_name: Dracula
+  theme_name: Dracula
   #theme_name: Nord
-  theme_name: Monokai_Bright
+  #theme_name: "Monokai Extended Bright"
+
   padding:
     horizontal: 2
     vertical: 1
