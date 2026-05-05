@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  wallp = ./observer.png;
+  wallp = ./Apple50_Black_Mac.png;
 in {
   programs.desktoppr = {
     enable = true;
