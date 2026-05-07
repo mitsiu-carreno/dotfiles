@@ -9,7 +9,7 @@ vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
 
 -- Identation
--- <Tab> appears as 2 space wide 
+-- <Tab> appears as 2 space wide
 vim.opt.tabstop = 2
 -- Auto-indent shift by 2 spaces
 vim.opt.shiftwidth = 2
@@ -32,3 +32,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.opt.ignorecase = true
 -- Overrides ignorecase if patter contains uppercase
 vim.opt.smartcase = true
+
+-- %:p reference :help filename-modifiers
+if vim.fn.expand('%:p'):match('upa') then
+  vim.opt.relativenumber = false
+end
