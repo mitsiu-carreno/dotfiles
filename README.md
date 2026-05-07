@@ -89,6 +89,17 @@ export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 sops secrets/secrets.yaml
 ```
 
+### Sops service failed
+Job for sops-nix.service failed because the control process exited with error code.
+A)
+```bash
+home-manager switch --refresh --flake .#linux
+```
+B)
+```bash
+systemctl --user reset-failed
+```
+
 # Historical Archive
 1. Install nix
 ```bash
