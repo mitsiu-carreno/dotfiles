@@ -3,6 +3,7 @@
     pkgs.presenterm
     pkgs.typst
     pkgs.pandoc
+    pkgs.python313Packages.weasyprint
   ];
 
   xdg.configFile."presenterm/config.yaml".source = ./config/config.yaml;
