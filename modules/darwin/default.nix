@@ -49,7 +49,7 @@
         autohide = true;
         persistent-apps = [];
         show-recents = false;
-        tilesize = 20;
+        tilesize = 25;
       };
       finder = {
         AppleShowAllExtensions = true;
