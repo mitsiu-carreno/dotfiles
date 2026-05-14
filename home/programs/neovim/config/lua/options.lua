@@ -35,7 +35,7 @@ vim.opt.smartcase = true
 
 -- %:p reference :help filename-modifiers
 if vim.fn.expand('%:p'):match('upa') then
-  vim.cmd.colorscheme("mfd-mono")
+  vim.cmd.colorscheme("mfd-flir-rh")
   vim.opt.relativenumber = false
 else
   local light_themes = {

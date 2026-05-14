@@ -3,6 +3,7 @@
     pkgs.presenterm
     pkgs.typst
     pkgs.pandoc
+    pkgs.texliveSmall
     pkgs.python313Packages.weasyprint
   ];
 
