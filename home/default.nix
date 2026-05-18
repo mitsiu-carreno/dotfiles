@@ -14,11 +14,14 @@
     ./programs/kitty
     ./programs/tree
     ./programs/mongo
+    ./programs/postgres
     ./programs/ssh
     ./programs/keepassxc
     ./programs/sops
     ./programs/tealdeer
     ./programs/bruno
     ./programs/presenterm
+    ./programs/dot
+    ./programs/tex
   ];
 }
