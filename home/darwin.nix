@@ -6,5 +6,7 @@
 
   imports = [
     ./programs/desktoppr
+    # Podman vm manager
+    ./programs/vfkit
   ];
 }
