@@ -23,5 +23,6 @@
     ./programs/presenterm
     ./programs/dot
     ./programs/tex
+    ./programs/ansible
   ];
 }
