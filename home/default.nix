@@ -24,5 +24,6 @@
     ./programs/dot
     ./programs/tex
     ./programs/ansible
+    ./programs/pdf-utils
   ];
 }
