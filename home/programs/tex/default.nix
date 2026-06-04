@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.texliveMedium  # pdfjam
+    pkgs.texliveSmall
   ];
 }
 
