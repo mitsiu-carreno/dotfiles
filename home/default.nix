@@ -25,5 +25,6 @@
     ./programs/tex
     ./programs/ansible
     ./programs/pdf-utils
+    ./programs/aws
   ];
 }
