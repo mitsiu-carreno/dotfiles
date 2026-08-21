@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.texliveSmall
+    (pkgs.texliveSmall.withPackages (ps: with ps; [
+      listings
+      xcolor
+    ]))
   ];
 }
-
