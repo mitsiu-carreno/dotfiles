@@ -1,5 +1,12 @@
 # Quick setup
 1. Install nix 
+```bash
+(Fedora) #https://src.fedoraproject.org/rpms/nix
+(Fedora) $ sudo dnf install nix nix-daemon
+(Fedora) $ sudo systemctl enable --now nix-daemon
+(Fedora) $ nix run nixpkgs#hello
+(Fedora) Jump to 5
+```
 
 2. Prepare folder
 ```bash
@@ -27,6 +34,7 @@ git clone https://github.com/mitsiu-carreno/dotfiles.git /etc/nix-darwin
 6. Build the flake
 ```bash
 sudo nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes"  -- switch  --flake /etc/nix-darwin#mac
+(Fedora) $nix run home-manager/master -- switch --flake .#linux
 ```
 
 7. Populate .config/sops/age/keys.txt
