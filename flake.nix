@@ -98,6 +98,7 @@
         sops-nix.homeManagerModules.sops
         ./home
         ./home/linux.nix
+        ./home/fedora.nix
       ];
     };
 
