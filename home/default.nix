@@ -27,5 +27,6 @@
     ./programs/pdf-utils
     ./programs/aws
     ./programs/info-sec
+    ./programs/dsa
   ];
 }
