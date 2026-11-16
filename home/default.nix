@@ -28,5 +28,6 @@
     ./programs/aws
     ./programs/info-sec
     ./programs/dsa
+    ./programs/rlwrap
   ];
 }
