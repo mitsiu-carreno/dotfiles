@@ -1,29 +1,33 @@
+palette:
+  colors:
+    bg: "490999"
+    fg: "white"
+    accent: "439798"
+
 default:
   margin:
-    percent: 8
+    percent: 4
   colors:
-    # Main text color
-    foreground: "f2f9fc"
-    background: null
+    foreground: "p:fg"
+    background: "p:bg"
 
 slide_title:
   alignment: left
   padding_bottom: 0
   padding_top: 0
   colors:
-    # Theorically unused
-    foreground: "009700"
+    foreground: "p:fg"
   bold: true
+  separator: true
 
 code:
   alignment: center
-  minimum_size: 50
+  minimum_size: 2
   minimum_margin:
-    percent: 8
-  theme_name: Dracula
+    percent: 2
+  #theme_name: Dracula
   #theme_name: Nord
-  #theme_name: "Monokai Extended Bright"
-
+  theme_name: "Monokai Extended Bright"
   padding:
     horizontal: 2
     vertical: 1
@@ -36,7 +40,12 @@ execution_output:
 inline_code:
   colors:
     # `This accents`
-    foreground: "FF5666"
+    foreground: "p:fg"
+    background: "p:accent"
+
+bold:
+  colors:
+    foreground: "p:accent"
 
 intro_slide:
   title:
@@ -82,9 +91,9 @@ headings:
 block_quote:
   prefix: "▍ "
   colors:
-    foreground: white
-    background: black
-    prefix: "00CCFF"
+    foreground: "p:bg"
+    background: "p:fg"
+    prefix: "p:accent"
 
 typst:
   colors:
