@@ -1,9 +1,17 @@
 defaults:
   theme: custom-dark
 
+export:
+  pdf:
+    fonts:
+      normal: "@dejavuFontDir@/DejaVuSansMono.ttf"
+      bold: "@dejavuFontDir@/DejaVuSansMono-Bold.ttf"
+      italic: "@dejavuFontDir@/DejaVuSansMono-Oblique.ttf"
+      bold_italic: "@dejavuFontDir@/DejaVuSansMono-BoldOblique.ttf"
+
 typst:
   # the pixels per inch when rendering latex/typst formulas.
-  ppi: 400
+  ppi: 500
 
 options:
   implicit_slide_ends: true
